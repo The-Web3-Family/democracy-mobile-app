@@ -44,35 +44,41 @@ const State = () => {
               a tax on properties worth over $4 million.
             </Text>
             <View style={styles.radioGroup}>
-              <View style={styles.radioItem}>
+              <TouchableOpacity
+                onPress={() => handleChangeState("yes")}
+                style={styles.radioItem}
+              >
                 <RadioButton
                   value="yes"
                   status={checked === "yes" ? "checked" : "unchecked"}
-                  onPress={() => handleChangeState("yes")}
                 />
                 <Text style={styles.radioLabel}>Yes</Text>
-              </View>
-              <View style={styles.radioItem}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => handleChangeState("no")}
+                style={styles.radioItem}
+              >
                 <RadioButton
                   value="no"
                   status={checked === "no" ? "checked" : "unchecked"}
-                  onPress={() => handleChangeState("no")}
                 />
                 <Text style={styles.radioLabel}>No</Text>
-              </View>
-              <View style={styles.radioItem}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => handleChangeState("undecided")}
+                style={styles.radioItem}
+              >
                 <RadioButton
                   value="undecided"
                   status={checked === "undecided" ? "checked" : "unchecked"}
-                  onPress={() => handleChangeState("undecided")}
                 />
                 <Text style={styles.radioLabel}>Undecided</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText} onPress={handleNext}>
-              Statistics Button
+              Voting
             </Text>
           </TouchableOpacity>
           <View style={styles.cardFooter}>
